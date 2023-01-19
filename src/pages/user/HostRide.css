@@ -1,0 +1,170 @@
+.hr-title h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.host-ride-input-box {}
+
+.input-box label {
+  color: #333;
+  height: 100%;
+  align-self: center;
+  font-size: large;
+}
+
+.input-box input {
+  margin: 0;
+}
+
+.vehicle-input-box {
+  flex: 1;
+
+}
+
+.vehicle-input-box label {
+  color: #333;
+  height: 100%;
+  align-self: center;
+  font-size: large;
+  font-weight: 500;
+
+}
+
+.vehicle-image-display {
+  flex: 3;
+}
+
+
+.hostaride :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hostaride .column {
+  display: flex;
+  column-gap: 15px;
+  margin-top: 20px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+
+.hostaride button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: brown;
+}
+
+.hostaride button:hover {
+  background: darksalmon;
+}
+
+.hostaride {
+  position: relative;
+  top: 15%;
+  left: 50%;
+  width: 606px;
+  padding: 40px;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
+  background-color: lightgrey;
+  overflow: visible !important;
+}
+
+.fa {
+  color: brown;
+}
+
+.aw {
+  width: 200px;
+}
+
+.optionListContainer {
+  position: relative !important;
+}
+
+.vehicle-add-div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.vehicle-image-display {
+  display: flex;
+  column-gap: 5px;
+  width: fit-content;
+  height: fit-content; 
+
+
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  column-gap: 5px;
+  border-radius: 50%;
+}
+
+.v-image {
+  width: 50%;
+  height: 50%;
+  box-shadow: 0 0 25px rgba(184, 68, 164, 0.08);
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+  background-color: azure; 
+
+
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border: 1px solid black;
+}
+.card-img-top {
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  float: right;
+}
+.img-button{
+  background-color: none;
+}

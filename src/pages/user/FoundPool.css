@@ -1,0 +1,86 @@
+.pool-list-container h3 {
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.pl-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.pl-host {
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    padding: 0 20px;
+    transition: all 0.5s;
+}
+
+.pl-row {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 16px;
+    border-radius:25px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    padding: 0 40px;
+    transition: all 0.5s;
+    max-width: 100%;
+}
+
+.request-ride-block {
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    width: fit-content;
+    padding: 0 15px;
+    transition: all 0.5s;
+}
+
+.r-btn {
+    border: none;
+    background-color: cadetblue;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0 10px;
+}
+
+.r-btn:hover {
+    background-color: rgb(146, 195, 241);
+}
+
+.pl-details {
+    display: flex;
+    column-gap: 3vh;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 2vh;
+    background-color: gray;
+    border-radius: 5px;
+    transition: all 0.5s;
+    max-width: 100%;
+}
+.pl-details:hover{
+    background-color: dimgrey;
+}
+.b1{
+    color:green;
+    border: none;
+}
+.b2{
+    color: red;
+    border: none;
+}
+.pl-host .hostname{
+    
+}
