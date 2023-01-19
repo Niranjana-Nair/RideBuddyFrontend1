@@ -14,7 +14,7 @@ const initialFeildValues = {
     vehicleType: '',
     vehicleNumber: '',
     numberOfSeats: 0,
-    vehicleOwnerId: 'SYT865',
+    vehicleOwnerId: 'SYT454',
 
 
     imageName: '',
@@ -40,7 +40,7 @@ export default function AddWheels() {
         })
 
     }
-    const UserAPI = (url = 'https://rideabuddyapi.suyatitech.com/api/Vehicle/register') => {
+    const UserAPI = (url = 'https://localhost:7149/api/Vehicle/register') => {
         let token = localStorage.getItem("token");
     const headers = {
         Authorization: "Bearer " + token,

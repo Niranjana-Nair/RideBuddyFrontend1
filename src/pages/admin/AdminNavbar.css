@@ -61,6 +61,7 @@
     gap: 15px;
     transition: all 0.5s;
     font-size: smaller;
+   
 }
 .sidebar-link{
     display: flex;
@@ -101,11 +102,13 @@ img{
     background-color: #93c47d;
 }
 .link{
-    background-color: #93c47d;
+    /* background-color: #93c47d; */
+    background-color: transparent;
     text-decoration: none;
 }
 .link:hover{
-    background-color: #93c47d;
+    /* background-color: #93c47d; */
+    background-color: transparent;
 }
 .below-navbar-div{
     overflow-y: scroll !important;
@@ -126,13 +129,15 @@ img{
     display: block;
 }
 .dropdown:hover .dropbtn {
-    background-color: #93c47d
+    /* background-color: #93c47d */
+    background-color: transparent;
 }
 .dropdown-content a:hover {
-    background-color: rgb(59, 53, 53);
+    background-color: rgb(158, 191, 230);
 }
 .dropbtn {
-    background-color: #93c47d;
+    /* background-color: #93c47d; */
+    background-color: transparent;
     color: white;
     border: none;
     padding:9px;

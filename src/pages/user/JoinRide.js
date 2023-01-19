@@ -56,7 +56,7 @@ export default function JoinRide() {
         setErrors(validate(values));
         setIsSubmit(true);
         feedData();
-        
+
     }
     const UserAPI = (url = 'https://localhost:7149/api/JoinRide/joinriderequest') => {
         let token = localStorage.getItem("token");
@@ -82,8 +82,8 @@ export default function JoinRide() {
         }
         return {
             fetchAll: () => axios.get(url),
-            create: newRecord => axios.post(url, newRecord,{
-                headers:headers
+            create: newRecord => axios.post(url, newRecord, {
+                headers: headers
             }),
             update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
             delete: id => axios.delete(url + id)
@@ -131,13 +131,13 @@ export default function JoinRide() {
             <Layout>
                 <body className="joinride-body">
                     <div class="joinride-container">
-                        <div class="joinride-title">Join A Ride </div>
+                        <div class="joinride-title">Join A Ride</div>
                         <div class="joinride-content">
                             <form className="joinride-form" onSubmit={handleSubmit}>
                                 <div class="joinride-user-details">
                                     <div class="input-box">
                                         <label>Start Location</label>
-                                        <input className={"form-control"} type="text" placeholder="Hey,Where do you plan to go?" name="StartLocation"
+                                        <input className={"form-control"} type="text" placeholder="Hey,where to pick you from?" name="StartLocation"
                                             value={values.StartLocation}
                                             onChange={handleInputChange} />
                                         <p className="error-text">{errors.StartLocation}</p>
@@ -160,7 +160,7 @@ export default function JoinRide() {
                                     </div>
                                     <div className="input-box">
                                         <label>Destination</label>
-                                        <input className={"form-control"} type="text" placeholder="Where to pick you from?" name="EndLocation"
+                                        <input className={"form-control"} type="text" placeholder="Where do you plan to go?" name="EndLocation"
                                             value={values.EndLocation}
                                             onChange={handleInputChange} />
                                         <p className="error-text">{errors.EndLocation}</p>
@@ -168,7 +168,7 @@ export default function JoinRide() {
                                 </div>
 
                                 <div class="button">
-                                    <input type="submit" value="Register" />
+                                    <input type="submit" value="Find Pools" />
                                 </div>
                             </form>
                         </div>

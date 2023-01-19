@@ -16,7 +16,7 @@ import { decodeToken } from "react-jwt";
 
 
 
-const Id = "SYT865";
+const Id = "SYT454";
 
 export default function Wheels() {
   const [openModal, setOpenModal] = useState(false);
@@ -65,7 +65,7 @@ export default function Wheels() {
         "Content-Type": "application/json",
     }
     axios
-      .get((`https://rideabuddyapi.suyatitech.com/api/Vehicle/getVehicle/` + Id), {
+      .get((`https://localhost:7149/api/Vehicle/getVehicle/` + Id), {
         headers:headers
       })
       .then((Response) => {
@@ -105,7 +105,7 @@ export default function Wheels() {
     }
 
     axios
-      .delete((`https://rideabuddyapi.suyatitech.com/api/Vehicle/delete/` + vehicleId),{
+      .delete((`https://localhost:7149/api/Vehicle/delete/` + vehicleId),{
         headers:headers
       })
       .then((Response) => {

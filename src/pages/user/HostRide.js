@@ -203,114 +203,98 @@ export default function HostRide() {
     return (
         <>
             <Layout>
-                <div className="hr-title">
-                    <h2>Host a Pool</h2>
-                </div>
-                <div className="body-content">
-                    <form autoComplete="off" className="hostaride" onSubmit={handleSubmit}>
-
-
-                        <div className="input-box">
-                            <label>Start Location</label>
-                            <input className={"form-control"} type="text" placeholder="Hey,Where do you start?" name="StartLocation"
-                                value={values.StartLocation}
-                                onChange={handleInputChange} />
-                            <p className="error-text">{errors.StartLocation}</p>
-                        </div>
-
-
-                        <div className="column">
-                            <div className="input-box">
-                                <label>Date</label>
-                                <input className={"form-control"} type="date" placeholder="Which Date?" name="StartDate"
-                                    value={values.StartDate}
-                                    onChange={handleInputChange} required />
-                                <p className="error-text">{errors.StartDate}</p>
-                            </div>
-                            <div className="input-box">
-                                <label>Time</label>
-                                <input className={"form-control"} type="time" placeholder="And What Time?" name="StartTime"
-                                    value={values.StartTime}
-                                    onChange={handleInputChange} required />
-                                <p className="error-text">{errors.StartTime}</p>
-                            </div>
-                        </div>
-                        <div className="input-box">
-                            <label>Destination</label>
-                            <input className={"form-control"} type="text" placeholder="Enter your destination" name="EndLocation"
-                                value={values.EndLocation}
-                                onChange={handleInputChange} required />
-                            <p className="error-text">{errors.EndLocation}</p>
-                        </div>
-                        <div className="vehicle-add-div">
-                            <div className="vehicle-input-box">
-                                <label>Add/Select Wheels </label>
-                                <Link className='add-w' to="/add-wheels"><Icons.FaPlusCircle></Icons.FaPlusCircle><i class="fa fa-plus-circle" aria-hidden="true"></i></Link>
-                            </div>
-                            <div className="vehicle-image-display">
-                                {VehicleList.map((data) => {
-                                    return (
-                                        // <div key={data.vehicleId} className="v-list">
-                                        <div className="v-image">
-                                            {/* <li key={data.vehicleId}></li> */}
-                                            <input type="checkbox" />
-                                            <img onClick={() => {
-                                                statusCheck(data.vehicleId);
-                                                values.VehicleId = data.vehicleId;
-                                            }}
-                                                src={data.imageSrc}
-                                                className="card-img-top rounded-circle vehicle-image"
-                                            />
-
+                <body className="hostride-body">
+                    <div class="hostride-container">
+                        <div class="hostride-title">Host A Ride</div>
+                        <div class="hostride-content">
+                            <form className="hostride-form" onSubmit={handleSubmit}>
+                                <div class="hostride-user-details">
+                                    <div class="input-box">
+                                        <label>Start Location</label>
+                                        <input className={"form-control"} type="text" placeholder="Hey,Where do you start?" name="StartLocation"
+                                            value={values.StartLocation}
+                                            onChange={handleInputChange} />
+                                        <p className="error-text">{errors.StartLocation}</p>
+                                    </div>
+                                    <div className="column">
+                                        <div className="input-box">
+                                            <label>Which Date?</label>
+                                            <input className={"form-control"} type="date" placeholder="Which Date?" name="StartDate"
+                                                value={values.StartDate}
+                                                onChange={handleInputChange} required />
+                                            <p className="error-text">{errors.StartDate}</p>
                                         </div>
-                                        // </div>
-                                    );
-                                })}
-                            </div>
-
-                        </div>
-
-
-                        <div className="column">
-                            <div className="input-box">
-                                <label>Fare</label>
-                                <input type="number" className={"form-control"} placeholder="Fare" name="fare" />
-                            </div>
-                            <div className="input-box">
-                                <label>Number of Seats</label>
-                                <div className="select-box">
-
-                                    <select type="number" className={"form-control"} placeholder="Number" name="NumberOfSeats" value={values.NumberOfSeats}
-                                        onChange={handleInputChange} required>
-
-                                        <option hidden>Seats</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                        <div className="input-box">
+                                            <label>And What Time?</label>
+                                            <input className={"form-control"} type="time" placeholder="And What Time?" name="StartTime"
+                                                value={values.StartTime}
+                                                onChange={handleInputChange} required />
+                                            <p className="error-text">{errors.StartTime}</p>
+                                        </div>
+                                    </div>
+                                    <div className="input-box">
+                                        <label>Where to ?</label>
+                                        <input className={"form-control"} type="text" placeholder="Enter your destination" name="EndLocation"
+                                            value={values.EndLocation}
+                                            onChange={handleInputChange} required />
+                                        <p className="error-text">{errors.EndLocation}</p>
+                                    </div>
+                                    <div className="add-vehicle-image">
+                                        <div className="select-vehicle">
+                                            <label>Add/Select Wheels </label>
+                                            <Link className='add-vehicle' to="/add-wheels"><Icons.FaPlusCircle></Icons.FaPlusCircle><i class="fa fa-plus-circle" aria-hidden="true"></i></Link>
+                                        </div>
+                                        <div className="vehicle-image-display">
+                                            {VehicleList.map((data) => {
+                                                return (
+                                                    <div className="mywheel-image">
+                                                        <img onClick={() => {
+                                                            statusCheck(data.vehicleId);
+                                                            values.VehicleId = data.vehicleId;
+                                                        }}
+                                                            src={data.imageSrc}
+                                                        />
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className="column">
+                                        <div className="input-box">
+                                            <label>Fare</label>
+                                            <input type="number" className={"form-control"} placeholder="Fare" name="fare" />
+                                        </div>
+                                        <div className="input-box">
+                                            <label>Number of Seats</label>
+                                            <div className="select-box">
+                                                <select type="number" className={"form-control"} placeholder="Number" name="NumberOfSeats" value={values.NumberOfSeats}
+                                                    onChange={handleInputChange} required>
+                                                    <option hidden>Seats</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="input-box">
+                                        <label>Invite Others</label>
+                                        <div className="user-search">
+                                            <Select isMulti options={userList} onChange={DdlHandle} ></Select>
+                                        </div>
+                                    </div>
+                                    {console.log("selected users:", invitedUserObj)}
+                                    {console.log("invitation sent by", values.InvitedMembers)}
                                 </div>
-                            </div>
+                                <div class="button">
+                                    <input type="submit" value="Host Ride" />
+                                </div>
+                            </form>
                         </div>
-                        <div className="input-box">
-                            <label>Invite Others</label>
-                            <div className="user-search">
-                                <Select isMulti options={userList} onChange={DdlHandle} ></Select>
-                                {/* <div>
-                                <b>The selected country: </b><h3>{invitedUserObj}</h3>
-                            </div> */}
-                            </div>
-
-                        </div>
-                        {console.log("selected users:", invitedUserObj)}
-                        {console.log("invitation sent by", values.InvitedMembers)}
-                        <div className='submit'>
-                            <button>Host Pool</button>
-                        </div>
-
-                    </form>
-                </div>
+                    </div>
+                </body>
                 <Footer></Footer>
 
             </Layout>

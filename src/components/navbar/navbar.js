@@ -62,14 +62,14 @@ function Layout(props) {
                             <Link className='link' to="/user-login">
                                 LOGIN
                             </Link>:
-                            <button className='link' onClick={logoutHandler}>Logout</button>
+                            <button className='link' onClick={logoutHandler}>LOGOUT</button>
                         }   
                         </li>
-                        <li className='topListItem'>
+                        {/* <li className='topListItem'>
                             <Link className='link' to="/add-users">
                                 REGISTER
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 

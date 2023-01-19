@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../../components/navbar/navbar'
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import "./ConfirmPool.css";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ export default function ConfirmPool() {
 
 
     const { hostedRideId } = useParams();
-    console.log("hostedid:",hostedRideId)
+    console.log("hostedid:", hostedRideId)
     console.log("useparams", hostedRideId)
     const Navigate = useNavigate();
 
@@ -77,95 +77,95 @@ export default function ConfirmPool() {
     return (
         <>
             <Layout>
-                
-                        <div key={ConfirmRide.Id} className='confirm-pool-body'>
-                            <h3>Confirm Pool Details</h3>
-                            <div className='section1'>
-                                <div className='profile-and-wheels'>
-                                    <div className='profile-card'>
-                                        <div className='profile-hostname'>
-                                            <div className='host-image'>
+                <div className='register-body'>
+        
+                    {/* <p className='confirmpool-title'>Confirm Pool Details</p> */}
+                    <div key={ConfirmRide.Id} className='confirm-pool-body'>
+                        <div className='section1'>
+                            <div className='profile-and-wheels'>
+                                <div className='profile-card'>
+                                    <div className='profile-hostname'>
+                                        <div className='host-image'>
                                             <img
                                                 src={ConfirmRide.profileSrc}
                                                 className="host-picture"
                                             />
-                                            </div>
-                                            <div className='host-name-id'>
-                                                <label>Host Name : {ConfirmRide.fullName} </label><br></br>
-                                                <label>Employee ID :{ConfirmRide.employeeId} </label>
-                                            </div>
+                                        </div>
+                                        <div className='host-name-id'>
+                                            <label>Host Name : {ConfirmRide.fullName} </label><br></br>
+                                            <label>Employee ID :{ConfirmRide.employeeId} </label>
                                         </div>
                                     </div>
-                                    <div className='vehicle-detail-card'>
-                                        <div className='wheel-image-name-number'>
-                                            <div className='wheel-image'>
+                                </div>
+                                <div className='vehicle-detail-card'>
+                                    <div className='wheel-image-name-number'>
+                                        <div className='wheel-image'>
                                             <img
                                                 src={ConfirmRide.vehicleSrc}
                                                 className="vehicle-picture"
                                             />
-                                            </div>
-                                            <div className='wheel-name-number'>
-                                                <label>Vehicle Name : {ConfirmRide.vehicleName}</label><br></br>
-                                                <label>Vehicle Number :{ConfirmRide.vehicleNumber} </label>
-                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className='from-to-details'>
-                                    <div className='from-to-date-time-seat'>
-                                        <div className='from'>
-                                            <label>Start Location : {ConfirmRide.startLocation}</label>
+                                        <div className='wheel-name-number'>
+                                            <p>{ConfirmRide.vehicleName}</p>
+                                            <p>{ConfirmRide.vehicleNumber} </p>
                                         </div>
-                                        <div className='to'>
-                                            <label>Destination:{ConfirmRide.endtLocation}</label>
-                                        </div>
-                                        <div className='start-time'>
-                                            <label>Ride start date:{ConfirmRide.startDate}</label><br></br>
-                                            <label>Ride start time: {ConfirmRide.startTime}</label>
-
-                                        </div>
-                                        <div>
-                                            <label><h5>Select number of seats :</h5></label>
-                                            <button className="b1" onClick={handleClick1}>+</button>
-                                            {counter}
-                                            <button className="b2" onClick={handleClick2}>-</button>
-
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div className='section2'>
-                                <div className='riders-multidropoff'>
-                                    <div className='form-card'>
-                                        <div className='no-of-riders'>
-                                            <h5>Number of Riders:  {counter}</h5>
-                                        </div>
-                                        <div className='multi-dropoff'>
-
-                                            {/* <input type="password" placeholder="Password" name="confirmPassword" /> */}
-                                            <button className='dropoff-button' onClick={() => handleAdd()}>Add {counter} dropoff locations</button>
-                                            {val.map((data, i) => {
-                                                return (
-                                                    <div>
-                                                        <input value={data} onChange={e => handleChange(e, i)} />
-                                                        <button onClick={() => handleDelete(i)}>x</button>
-                                                    </div>
-                                                )
-                                            })}
-
-                                        </div>
+                            <div className='from-to-details'>
+                                <div className='from-to-date-time-seat'>
+                                    <div className='from'>
+                                        <label>Start Location : {ConfirmRide.startLocation}</label>
                                     </div>
-                                </div>
+                                    <div className='to'>
+                                        <label>Destination:{ConfirmRide.endtLocation}</label>
+                                    </div>
+                                    <div className='start-time'>
+                                        <label>Start Date:{ConfirmRide.startDate}</label><br></br>
+                                        <label>Start Time: {ConfirmRide.startTime}</label>
 
-                            </div>
-                            <div className='confirm-button'>
-                                <button className='cr-button'>Request Pool</button>
+                                    </div>
+                                    <div className='seatss'>
+                                        <label className='no-of-seats'>Select number of seats :</label><br></br><br></br>
+                                        <button className="b1" onClick={handleClick1}>+</button>
+                                        {counter}
+                                        <button className="b2" onClick={handleClick2}>-</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
+
+                        <div className='section2'>
+                            <div className='riders-multidropoff'>
+                                <div className='form-card'>
+                                    <div className='no-of-riders'>
+                                        <p className='no-of-riderss'>Number of Riders:  {counter}</p>
+                                    </div>
+                                    <div className='multi-dropoff'>
+
+                                        {/* <input type="password" placeholder="Password" name="confirmPassword" /> */}
+                                        <button className='dropoff-button' onClick={() => handleAdd()}>Add {counter} dropoff locations</button>
+                                        {val.map((data, i) => {
+                                            return (
+                                                <div className='multi-dropoff-input'>
+                                                    <input className='input-locations' value={data} onChange={e => handleChange(e, i)} />
+                                                    <button className='cancel-button' onClick={() => handleDelete(i)}>x</button>
+                                                </div>
+                                            )
+                                        })}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='confirm-button'>
+                            <button className='cr-button'>Confirm Pool</button>
+                        </div>
+                    </div>
+                </div>
             </Layout>
         </>
     )
