@@ -51,7 +51,7 @@ export default function HomePage(){
           <div className='SpanClassHeader'>"Reduce CO2 . Save Money . Grow network" </div>
 
           <div className='pool'>
-            <Link to="/#" className='btn1'>Join Pool</Link>
+            <Link to="/join-ride" className='btn1'>Join Pool</Link>
             <Link to="/host-ride" className='btn1'>Host Pool</Link>
           </div>
           {/* <button className=" btn1">Host Pool</button> */}

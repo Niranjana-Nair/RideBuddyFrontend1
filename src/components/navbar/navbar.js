@@ -48,7 +48,7 @@ function Layout(props) {
                             <i class="fa fa-caret-down"></i>
                             <div class="dropdown-content">
                                 <Link className='ddlink' to="/">REQUESTS</Link>
-                                <Link className='ddlink' to="/">HOSTED RIDES</Link>
+                                <Link className='ddlink' to="/trip-hosted">HOSTED RIDES</Link>
                                 <Link className='ddlink' to="/">TRIP HISTORY</Link>
                             </div>
                         </div>

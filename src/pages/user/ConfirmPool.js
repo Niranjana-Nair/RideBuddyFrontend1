@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import "./ConfirmPool.css";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
+import swal from 'sweetalert';
 
 export default function ConfirmPool() {
 
@@ -30,6 +31,18 @@ export default function ConfirmPool() {
         ConfirmYourRide(hostedRideId);
     }, []);
 
+
+    const [isStart, setIsStart] = useState(false);
+
+  const statusStart = () => {
+    setIsStart(true);
+    swal({
+        title: "Success",
+        text: "Pool Request Sent !",
+        icon: "success",
+      });
+    Navigate("/home-page");
+  };
 
 
     const [val, setVal] = useState([]);
@@ -162,7 +175,7 @@ export default function ConfirmPool() {
 
                         </div>
                         <div className='confirm-button'>
-                            <button className='cr-button'>Confirm Pool</button>
+                            <button onClick={statusStart} className='cr-button'>Confirm Pool</button>
                         </div>
                     </div>
                 </div>
