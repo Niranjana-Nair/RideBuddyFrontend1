@@ -1,9 +1,0 @@
-.user-profile-container{
-    display: flex;
-    column-gap: 50px;
-}
-
-.wheel-details{
-  width:fit-content;
-  background-color: rgb(89, 212, 89);
-}

@@ -360,8 +360,6 @@ export default function AddUser() {
             </div>
             </div> */}
             <Layout>
-
-
                 <body className="register-body">
                     <div class="register-container">
                         <div class="register-title">Registration</div>

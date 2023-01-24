@@ -105,13 +105,13 @@ export default function ChangePassword() {
     const UserAPI = (url = postUrl) => {
         let token = localStorage.getItem("token");
         const headers = {
-        Authorization: "Bearer " + token,
-        "Content-Type": "application/json",
-    }
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json",
+        }
         return {
             fetchAll: () => axios.get(url),
             create: newRecord => axios.post(url, newRecord, {
-                headers:headers
+                headers: headers
             }),
             update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
             delete: id => axios.delete(url + id)
@@ -141,26 +141,36 @@ export default function ChangePassword() {
     return (
         <>
             <Layout>
-                <div className="cp-page">
-                    <h2>Enter New Password</h2>
-                    <div className="input-box">
-                        <form autoComplete="off" noValidate onSubmit={handleSubmit} className="cp-form">
-                            <label>New Password:</label>
-                            <input type="password" placeholder="Password" name="Password"
-                                value={values.Password}
-                                onChange={handleInputChange} />
-                            <p className="error-text">{errors.Password}</p>
-                            <label>Confirm Password</label>
-                            <input type="password" placeholder="Password" name="confirmPassword"
-                                value={values.confirmPassword}
-                                onChange={handleInputChange} />
-                            <p className="error-text">{errors.confirmPassword}</p>
-                            <button >Submit</button>
-                        </form>
-                    </div>
-                </div>
-            <Footer />
+                <body class="register-body">
+                    <div class="cp-container">
+                        <div class="cp-title">Reset Password</div>
+                        <div class="cp-content">
 
+                            <form onSubmit={handleSubmit} className="cp-form">
+                                <div className="cp-details">
+                                    <div className="input-box">
+                                        <span class="details">New Password:</span>
+                                        <input type="password" placeholder="Password" name="Password"
+                                            value={values.Password}
+                                            onChange={handleInputChange} />
+                                        <p className="error-text">{errors.Password}</p>
+                                    </div>
+                                    <div className="input-box">
+                                        <span class="details">Confirm Password:</span>
+                                        <input type="password" placeholder="Password" name="confirmPassword"
+                                            value={values.confirmPassword}
+                                            onChange={handleInputChange} />
+                                        <p className="error-text">{errors.confirmPassword}</p>
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <input type="submit" value="Submit" />
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </body>
             </Layout>
         </>
     )

@@ -20,10 +20,11 @@ import TestAddUser from './pages/user/TestAddUser';
 import TestWheels from './pages/user/TestWheels';
 import JoinRide from './pages/user/JoinRide';
 import FoundPool from './pages/user/FoundPool';
-import UserDetails from './pages/user/UserDetails';
 import ConfirmPool from './pages/user/ConfirmPool';
 import TripsHostedDetails from './pages/user/TripsHostedDetails';
 import CheckRide from './pages/user/CheckRide';
+import UserProfile from './pages/user/UserProfile';
+import StartRide from './pages/user/StartRide';
 
 function App() {
   return (
@@ -48,10 +49,11 @@ function App() {
         <Route path='/test-wheels' element={<TestWheels></TestWheels>}></Route>
         <Route path='/join-ride' element={<JoinRide></JoinRide>}></Route>
         <Route path='/found-pool' element={<FoundPool></FoundPool>}></Route>
-        <Route path='/user-details' element={<UserDetails></UserDetails>}></Route>
+        <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
         <Route path='/confirm-pool/:hostedRideId' element={<ConfirmPool></ConfirmPool>}></Route>
         <Route path='/trip-hosted' element={<TripsHostedDetails></TripsHostedDetails>}></Route>  
         <Route path='/check-ride/:id' element={<CheckRide></CheckRide>}></Route>  
+        <Route path='/start-ride' element={<StartRide></StartRide>}></Route>  
       </Routes>
     </div>
   );

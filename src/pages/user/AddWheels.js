@@ -42,14 +42,14 @@ export default function AddWheels() {
     }
     const UserAPI = (url = 'https://localhost:7149/api/Vehicle/register') => {
         let token = localStorage.getItem("token");
-    const headers = {
-        Authorization: "Bearer " + token,
-        "Content-Type": "application/json",
-    }
+        const headers = {
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json",
+        }
         return {
             fetchAll: () => axios.get(url),
-            create: newRecord => axios.post(url, newRecord,{
-                headers:headers
+            create: newRecord => axios.post(url, newRecord, {
+                headers: headers
             }),
             update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
             delete: id => axios.delete(url + id)
@@ -170,7 +170,7 @@ export default function AddWheels() {
         navigate('/user-login')
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         TokenCheck();
     })
 
@@ -178,80 +178,84 @@ export default function AddWheels() {
 
         <>
             <Layout >
-            <div className="header-title">
-                <header className="header-one">Add New Vehicle</header>
-            </div>
-            <div className="body-content">
-                <form autoComplete="off" noValidate onSubmit={handleSubmit} className="w-form">
 
-                    <div className="image-tag" >
-                        <img src={values.imageSrc} height="100px" width="100px" />
-                        <input type="file" accept="image/*" className={"form-control-file" + applyErrorClass('imageSrc')}
-                            onChange={imageUpdate} id="license-uploader" />
-                        <p className="error-text">{errors.imageSrc}</p>
+                <body className="register-body">
+                    <div class="add-wheel-container">
+                        <div class="add-wheel-title">Add New Vehicle</div>
+                        <div className="add-wheel-content">
+                            <form className="add-wheel-form" onSubmit={handleSubmit}>
+                                <div class="add-wheel-details">
+                                    <div className="image-tag" >
+                                        <img src={values.imageSrc} height="100px" width="100px" />
+                                        <input type="file" accept="image/*" className={"form-control-file" + applyErrorClass('imageSrc')}
+                                            onChange={imageUpdate} id="license-uploader" />
+                                        <p className="error-text">{errors.imageSrc}</p>
 
 
+                                    </div>
+                                    <div className="add-wheel-column">
+                                        <div className="input-box">
+                                            <label>Vehicle Name</label>
+                                            <input className={"form-control"} type="text" placeholder="Vehicle Name" name="vehicleName"
+                                                value={values.vehicleName}
+                                                onChange={handleInputChange} required />
+                                            <p className="error-text">{errors.vehicleName}</p>
+                                        </div>
+
+                                        <div className="input-box">
+                                            <label>Vehicle Type</label>
+                                            <div className="select-box">
+                                                <select placeholder="Vehicle Type" name="vehicleType"
+                                                    value={values.vehicleType}
+                                                    onChange={handleInputChange} >
+                                                    <option hidden>Vehicle Type</option>
+                                                    <option>Hatchback</option>
+                                                    <option>Sedan</option>
+                                                    <option>SUV</option>
+                                                    <option>Motorcycle</option>
+                                                    <option>Minivan</option>
+                                                </select>
+                                                <p className="error-text">{errors.vehicleType}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div className="add-wheel-column">
+                                        <div className="input-box">
+                                            <label>Vehicle Number </label>
+                                            <input className={"form-control"} placeholder="vehicleNumber" name="vehicleNumber"
+                                                value={values.vehicleNumber}
+                                                onChange={handleInputChange} required />
+                                            <p className="error-text">{errors.vehicleNumber}</p>
+                                        </div>
+                                        <div className="input-box">
+                                            <label>Number of Seats</label>
+                                            <div className="select-box">
+                                                <select type="number" className={"form-control"} placeholder="Number" name="numberOfSeats"
+                                                    value={values.numberOfSeats}
+                                                    onChange={handleInputChange} required  >
+                                                    <option hidden>Number of Seats</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                                <p className="error-text">{errors.numberOfSeats}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <input type="submit" value="Register" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className="column">
-                        <div className="input-box">
-                            <label>Vehicle Name</label>
-                            <input className={"form-control"} type="text" placeholder="Vehicle Name" name="vehicleName"
-                                value={values.vehicleName}
-                                onChange={handleInputChange} required />
-                            <p className="error-text">{errors.vehicleName}</p>
-                        </div>
-
-                        <div className="input-box">
-                            <label>Vehicle Type</label>
-                            <div className="select-box">
-                                <select placeholder="Vehicle Type" name="vehicleType"
-                                    value={values.vehicleType}
-                                    onChange={handleInputChange} >
-                                    <option hidden>Vehicle Type</option>
-                                    <option>Hatchback</option>
-                                    <option>Sedan</option>
-                                    <option>SUV</option>
-                                    <option>Motorcycle</option>
-                                    <option>Minivan</option>
-                                </select>
-                                <p className="error-text">{errors.vehicleType}</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className="column">
-                        <div className="input-box">
-                            <label>Vehicle Number </label>
-                            <input className={"form-control"} placeholder="vehicleNumber" name="vehicleNumber"
-                                value={values.vehicleNumber}
-                                onChange={handleInputChange} required />
-                            <p className="error-text">{errors.vehicleNumber}</p>
-                        </div>
-                        <div className="input-box">
-                            <label>Number of Seats</label>
-                            <div className="select-box">
-                                <select type="number" className={"form-control"} placeholder="Number" name="numberOfSeats"
-                                    value={values.numberOfSeats}
-                                    onChange={handleInputChange} required  >
-                                    <option hidden>Number of Seats</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <p className="error-text">{errors.numberOfSeats}</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <button >Register</button>
-
-                </form>
-            </div>
-            <Footer></Footer>
+                </body>
             </Layout>
         </>
 

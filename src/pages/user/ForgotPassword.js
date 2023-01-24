@@ -19,7 +19,7 @@ const initialFieldValues = {
 export default function ForgotPassword() {
 
 
-    
+
 
     const search = useLocation().search;
     const email = new URLSearchParams(search).get('id');
@@ -35,13 +35,13 @@ export default function ForgotPassword() {
         }
         return {
             fetchAll: () => axios.get(url),
-            create: newRecord => axios.post(url, newRecord, 
+            create: newRecord => axios.post(url, newRecord,
                 {
-                    headers:headers
+                    headers: headers
                 }),
             update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
             delete: id => axios.delete(url + id),
-            
+
         }
     }
 
@@ -106,24 +106,28 @@ export default function ForgotPassword() {
     return (
         <>
             <Layout>
-                <div className="fp-page">
-                    <h2>Enter Email</h2>
-                    <div>
-                        <form autoComplete="off" noValidate onSubmit={handleSubmit} className="fp-form">
+                <body class="register-body">
+                    <div class="fp-container">
+                        <div class="fp-title">Enter Email</div>
+                        <div class="fp-content">
+                            <form onSubmit={handleSubmit} className="fp-form">
+                                <div class="fp-details">
+                                    <div class="input-box">
+                                        <span class="details">Email</span>
+                                        <input className={"form-control"} placeholder="Enter Email" name="Email"
+                                            value={values.Email}
+                                            onChange={handleInputChange} required />
+                                        <p className="error-text">{errors.email}</p>
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <input type="submit" value="Submit" />
+                                </div>
+                            </form>
+                        </div>
 
-                            <label>Email Address</label>
-                            <input className={"form-control"} placeholder="Enter Email" name="Email"
-                                value={values.Email}
-                                onChange={handleInputChange} required />
-                            <p className="error-text">{errors.email}</p>
-                            <button className="submit-button" >Send Mail</button>
-
-                        </form>
                     </div>
-
-                </div>
-            <Footer />
-
+                </body>
             </Layout>
         </>
     )

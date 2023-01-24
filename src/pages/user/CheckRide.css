@@ -224,19 +224,31 @@ text-align: center;
 
  }
  .cbc-row{
-    border-radius:1vh;
+    /* border-radius:1vh;
     box-shadow: 0 4px 8px 0 rgba(230, 118, 118, 0.2);
     background-color: rgb(103, 172, 121);
     margin-top: 2vh;
     width: 100px ;
    width: fit-content;
     margin-right: 3vh;
-    padding: 10px 15px;
+    padding: 10px 15px; */
    /* height: fit-content; */
-   margin-bottom: 3vh;
+   /* margin-bottom: 3vh;
    margin-left: 1vw;
    text-align: justify;
-   text-align:center;
+   text-align:center; */
+
+
+   border-radius: 1vh;
+    box-shadow: 0 4px 8px 0 rgba(230, 118, 118, 0.2);
+    background-color: rgb(103, 172, 121);
+    margin-top: 2vh;
+    width: 13vw;
+    /* height:5vh; */
+    padding: 5px;
+    margin-left: 3vh;
+    text-align: left;
+
  }
 
  .cbc-icon{

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import { decodeToken } from "react-jwt";
+import swal from "sweetalert";
 
 
 
@@ -47,6 +48,11 @@ export default function UserLogin() {
                 onSuccess();
                 localStorage.setItem("token", res.data.output);
                 TokenCheck();
+                swal({
+                    title: "Success",
+                    text: "Successfully Logged In!",
+                    icon: "success",
+                  });
                 console.log("Redirect after login");
                 navigate("/home-page")
             })
