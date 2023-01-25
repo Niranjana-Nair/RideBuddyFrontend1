@@ -20,12 +20,6 @@ export default function CheckRide() {
   const [Invitedstatusget, setInvitedStatusget] = useState(false);
   const [Acceptedstatusget, setAcceptedStatusget] = useState(false);
   const [Deniedstatusget, setDeniedStatusget] = useState(false);
-  // const [data, setData] = useState([false]);
-  // const [nodata, setNoData] = useState([false]);
- 
-  // const status= invited.status;
-  // console.log("get-status",status);
-
   const [isStart, setIsStart] = useState(false);
 
   const statusStart = () => {
@@ -48,21 +42,10 @@ export default function CheckRide() {
         console.log(error);
       });
   }
-    //  const onData=(d)=>{
-    //   d.map((d) =>{
-    //   if (!d){
-    //     setNoData(true);
-    //   }
-    //   else if (d.data) {
-    //     setData (true);}
-
-    //   });
-
-    //  };
 
   const onLoad = (item) => {
     item.map((items) => {
-      console.log("itemstatus",items.status)
+      console.log("itemstatus", items.status)
       if (items.status == 0) {
         setInvitedStatusget(true);
       } else if (items.status == 1) {
@@ -70,10 +53,9 @@ export default function CheckRide() {
       } else if (items.status == 2) {
         setDeniedStatusget(true);
       }
-      
+
     });
   };
-
 
   function InvitedDetail() {
     axios
@@ -89,126 +71,103 @@ export default function CheckRide() {
         console.log(error);
       });
   }
-
   return (
     <>
       <Layout>
-        
-        <div className="trip-check-container">
-          {/* {console.log(zero)} */}
-          <div className="cr-title">
-            <h2>Check Rides</h2>
-          </div>
+        <div class="register-body">
+          <div className="trip-check-container">
+            {/* {console.log(zero)} */}
+            <div className="cr-title">
+              <h2>Check Rides</h2>
+            </div>
 
-          {CheckRide.map((data) => {
-            return (
-              <div key={data.id} className="cr-container">
-                <div className="cr-top-container">
-                  <div className=" cr-outer-box">
-                    <div className="cr-detail">
-                      <div className="cr-first">
-                        <div className="cr-row">
-                          <label>
-                            From: {data.startLocation}  <Icons.FaMapMarkerAlt/>
-                          </label>
+            {CheckRide.map((data) => {
+              return (
+                <div key={data.id} className="cr-container">
+                  <div className="cr-top-container">
+                    <div className=" cr-outer-box">
+                      <div className="cr-detail">
+                        <div className="cr-first">
+                          <div className="cr-row">
+                            <label>
+                              From: {data.startLocation}  <Icons.FaMapMarkerAlt />
+                            </label>
+                            <br></br>
+                          </div>
+                          <div className="cr-row">
+                            <label>
+                              To: {data.endLocation}  <Icons.FaMapMarkerAlt />
+                            </label>
+                          </div>
+                        </div>
+                        <div className="cr-first">
+                          <div className="cr-row">
+                            <label>Number of seat Left: {data.numberOfSeats}</label>
+                            <br></br>
+                          </div>
+                        </div>
+                        <div className="check-buttons">
+                          <button onClick={statusStart} className="cr-btn">
+                            Start Ride
+                          </button>
                           <br></br>
+                          <button className="cr-btn">Cancel Ride</button>
                         </div>
-                        <div className="cr-row">
-                          <label>
-                            To: {data.endLocation}  <Icons.FaMapMarkerAlt/>
-                          </label>
-                        </div>
-                      </div>
-                      <div className="cr-first">
-                        <div className="cr-row">
-                          <label>Number of seat Left: {data.numberOfSeats}</label>
-                          <br></br>
-                        </div>
-                      </div>
-                      <div className="check-buttons">
-                        <button onClick={statusStart} className="cr-btn">
-                          Start Ride
-                        </button>
-                        <br></br>
-                        <button className="cr-btn">Cancel Ride</button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-          <div className="cr-title">
-            <h2>You Invited Them To join</h2>
-          </div>
-          {/* {nodata && <p>No invited Members</p>}
-          {data &&  */}
-          <div className="cr-middile-container">
-            {invited.map((data) => {
-              return (
-                <div key={data.InvitationId} className="crm-outerbox">
-                  {/* <div className="crm-details"> */}
-                  <div className="crm-row">
-                    {/* <div className="crm-avatar"> </div> */}
-                    <img src={data.imageSrc} className="avatar" />
-                    {/* <div className="crm-icon"> */}
-                    <p> {data.fullName}</p>
-                    {/* </div> */}
-                    {/* </div> */}
-                    {/* <div className="crm-column"> */}
-                    {Invitedstatusget && <p> STATUS :Invited </p>}
-                    {Acceptedstatusget && <p> STATUS :Accepted </p>}
-                    {Deniedstatusget && <p> STATUS :Turned Down </p>}
-
-                  </div>
-                  {/* </div> */}
-                </div>
               );
             })}
-          </div> 
-
-
-          {/* } */}
-          <div className="cr-bottom-container">
             <div className="cr-title">
-              <h2>They are requesting to join your Pool</h2>
+              You invited them to join
             </div>
+            <div className="cr-middile-container">
+              {invited.map((data) => {
+                return (
+                  <div key={data.InvitationId} className="crm-outerbox">
+                    <div className="crm-row">
+                      <img src={data.imageSrc} className="avatar" />
+                      <p> {data.fullName}</p>
+                      {Invitedstatusget && <p> Status :Invited </p>}
+                      {Acceptedstatusget && <p>  :Accepted </p>}
+                      {Deniedstatusget && <p> Status :Turned Down </p>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="cr-bottom-container">
+              <div className="cr-title">They are requesting to join your pool </div>
+              <div className="join-request-block">
+                <div className="joinee-pic-name">
+                  <div className="joinee-pic">
+                    <img className="joinee-pic">
 
-            <div className="cbc-outer-box">
-              <div className="cbc-details">
-                <div className="cbc-first">
-                  <div className="cbc-icon">
-                
-                    <Icons.FaUser /> <br></br>
+                    </img>
                   </div>
-                  <div className="cbc-icon">
-                  
-                    <Icons.FaPhone />
+                  <div className="joinee-name-id">
+                    John<br></br>
+                    SYT555
                   </div>
                 </div>
-                <div className="cbc-first">
-                  <div className="cbc-row">
-                    <label>john</label>
+                <div className="from-to-dropofflocations">
+                  <div className="from-and-to">
+                    From : <br></br><br></br>
+                    To :
                   </div>
-                  <div className="cbc-row">
-                    <label>from: </label>
-                    <label>To:</label>
+                  <div className="seats-needed">
+                    Seats requested :
                   </div>
                 </div>
-              </div>
-
-              <div className="cbc-first">
-                <div className="cbc-row">
-                  <label>Accept</label>
-                </div>
-                <div className="cbc-row">
-                  <label>Deny </label>
+                <div className="accept-deny">
+                  <button className="accept">Accept</button>
+                  <button className="deny">Turn Down</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <Footer></Footer>
       </Layout>
     </>

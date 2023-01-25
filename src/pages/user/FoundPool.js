@@ -50,36 +50,38 @@ export default function FoundPool() {
                                 <div key={data.memberId} className="foundpool-details">
 
                                     <div className='foundpool-left'>
-                                        <div className='host-image-profile'>
-                                            <img
-                                                src={data.imageSrc}
-                                                className="host-img"
-                                            />
-                                        </div>
-                                        <div className='foundpool-host'>
-                                            <p>{data.hostName} </p>
+
+                                        <div className='image-host-name'>
+                                            <div className='host-image-profile'>
+                                                <img
+                                                    src={data.imageSrc}
+                                                    className="host-img"
+                                                />
+                                            </div>
+                                            <div className='foundpool-host'>
+                                                {data.hostName}
+                                            </div>
                                         </div>
 
                                         <div className="foundpool-row">
-                                            <p>{data.startLocation}</p>
-                                            <p>to</p>
-                                            <p>{data.endLocation}</p>
+                                            From : {data.startLocation}<br></br>
+                                            To : {data.endLocation}
                                         </div>
                                     </div>
                                     <div className='foundpool-right'>
-                                        <div className="requestride-block">
+                                        {/* <div className="requestride-block"> */}
 
-                                            <button onClick={() => {
-                                                confirmRide(data.hostedRideId);
-                                            }}
-                                                className='requestride-btn'>REQUEST POOL</button>
+                                        <button onClick={() => {
+                                            confirmRide(data.hostedRideId);
+                                        }}
+                                            className='requestride-btn'>Request</button>
 
-                                            <div className='call-seat-icons'>
-                                                <FontAwesomeIcon icon="fa-solid fa-square-phone" />
-                                                <p>Number of seats:</p>
-                                                {data.numberOfSeats}
-                                            </div>
+                                        <div className='call-seat-icons'>
+                                            <FontAwesomeIcon icon="fa-solid fa-square-phone" />
+                                            <p>Number of seats:</p>
+                                            {data.numberOfSeats}
                                         </div>
+                                        {/* </div> */}
                                     </div>
                                 </div>
                             )
