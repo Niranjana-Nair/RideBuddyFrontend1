@@ -2,11 +2,9 @@ import React from "react";
 import "./footer.css"
 import { Link } from 'react-router-dom';
 
-
 export default function Footer(props) {
     return (
         <>
-
             <div className='bottom'>
                 <div className='bottomLeft'>
                     RIDE BUDDY
@@ -23,13 +21,11 @@ export default function Footer(props) {
                 </div>
 
                 <div className="row">
-          <p className="col-sm">
-            &copy;{new Date().getFullYear()} RIDE BUDDY | All rights reserved |
-            Terms Of Service | Privacy
-          </p>
-        </div>
-
-
+                    <p className="col-sm">
+                        &copy;{new Date().getFullYear()} RIDE BUDDY | All rights reserved |
+                        Terms Of Service | Privacy
+                    </p>
+                </div>
             </div>
             <div>
                 {props.children}

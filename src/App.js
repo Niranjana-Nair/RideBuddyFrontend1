@@ -25,6 +25,7 @@ import TripsHostedDetails from './pages/user/TripsHostedDetails';
 import CheckRide from './pages/user/CheckRide';
 import UserProfile from './pages/user/UserProfile';
 import StartRide from './pages/user/StartRide';
+import UserManagement2 from './pages/admin/UserManagement2';
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
         <Route path='/trip-hosted' element={<TripsHostedDetails></TripsHostedDetails>}></Route>  
         <Route path='/check-ride/:id' element={<CheckRide></CheckRide>}></Route>  
         <Route path='/start-ride' element={<StartRide></StartRide>}></Route>  
+        <Route path='/admin-user-directory' element={<UserManagement2></UserManagement2>}></Route>  
+
       </Routes>
     </div>
   );

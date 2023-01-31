@@ -105,8 +105,8 @@ export default function ConfirmPool() {
                                             />
                                         </div>
                                         <div className='host-name-id'>
-                                            <label>Host Name : {ConfirmRide.fullName} </label><br></br>
-                                            <label>Employee ID :{ConfirmRide.employeeId} </label>
+                                            <label>{ConfirmRide.fullName} </label><br></br>
+                                            <label>{ConfirmRide.employeeId} </label>
                                         </div>
                                     </div>
                                 </div>
@@ -128,18 +128,17 @@ export default function ConfirmPool() {
                             <div className='from-to-details'>
                                 <div className='from-to-date-time-seat'>
                                     <div className='from'>
-                                        <label>Start Location : {ConfirmRide.startLocation}</label>
+                                        <label>{ConfirmRide.startLocation} to</label>
                                     </div>
                                     <div className='to'>
-                                        <label>Destination:{ConfirmRide.endtLocation}</label>
+                                        <label>{ConfirmRide.endtLocation}</label>
                                     </div>
                                     <div className='start-time'>
-                                        <label>Start Date:{ConfirmRide.startDate}</label><br></br>
-                                        <label>Start Time: {ConfirmRide.startTime}</label>
-
+                                        <label>On: {ConfirmRide.startDate}</label><br></br>
+                                        <label>At: {ConfirmRide.startTime}</label>
                                     </div>
                                     <div className='seatss'>
-                                        <label className='no-of-seats'>Select number of seats :</label><br></br><br></br>
+                                        <label className='no-of-seats'>select seats :</label><br></br><br></br>
                                         <button className="b1" onClick={handleClick1}>+</button>
                                         {counter}
                                         <button className="b2" onClick={handleClick2}>-</button>
@@ -154,7 +153,7 @@ export default function ConfirmPool() {
                             <div className='riders-multidropoff'>
                                 <div className='form-card'>
                                     <div className='no-of-riders'>
-                                        <p className='no-of-riderss'>Number of Riders:  {counter}</p>
+                                        <p className='no-of-riderss'>No of riders:  {counter}</p>
                                     </div>
                                     <div className='multi-dropoff'>
 
@@ -175,7 +174,7 @@ export default function ConfirmPool() {
 
                         </div>
                         <div className='confirm-button'>
-                            <button onClick={statusStart} className='cr-button'>Confirm Pool</button>
+                            <button onClick={statusStart} className='cr-button'>Send Request</button>
                         </div>
                     </div>
                 </div>

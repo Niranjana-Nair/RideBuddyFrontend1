@@ -78,44 +78,42 @@ export default function CheckRide() {
           <div className="trip-check-container">
             {/* {console.log(zero)} */}
             <div className="cr-title">
-              <h2>Check Rides</h2>
+              {/* <h2>Check Rides</h2> */}
             </div>
 
             {CheckRide.map((data) => {
               return (
                 <div key={data.id} className="cr-container">
-                  <div className="cr-top-container">
-                    <div className=" cr-outer-box">
-                      <div className="cr-detail">
-                        <div className="cr-first">
-                          <div className="cr-row">
-                            <label>
-                              From: {data.startLocation}  <Icons.FaMapMarkerAlt />
-                            </label>
-                            <br></br>
-                          </div>
-                          <div className="cr-row">
-                            <label>
-                              To: {data.endLocation}  <Icons.FaMapMarkerAlt />
-                            </label>
-                          </div>
-                        </div>
-                        <div className="cr-first">
-                          <div className="cr-row">
-                            <label>Number of seat Left: {data.numberOfSeats}</label>
-                            <br></br>
-                          </div>
-                        </div>
-                        <div className="check-buttons">
-                          <button onClick={statusStart} className="cr-btn">
-                            Start Ride
-                          </button>
-                          <br></br>
-                          <button className="cr-btn">Cancel Ride</button>
-                        </div>
+
+                  <div className="cr-detail">
+                    <div className="cr-first">
+                      <div className="cr-row">
+                        <label>
+                          From: {data.startLocation}  <Icons.FaMapMarkerAlt />
+                        </label>
+                        <br></br>
+                      </div>
+                      <div className="cr-row">
+                        <label>
+                          To: {data.endLocation}  <Icons.FaMapMarkerAlt />
+                        </label>
                       </div>
                     </div>
+                    <div className="cr-first">
+                      <div className="cr-row">
+                        <label>No.of seats left: {data.numberOfSeats}</label>
+                        <br></br>
+                      </div>
+                    </div>
+                    <div className="check-buttons">
+                      <button onClick={statusStart} className="cr-btn">
+                        Start Ride
+                      </button>
+                      <br></br>
+                      <button className="cr-btn">Cancel Ride</button>
+                    </div>
                   </div>
+
                 </div>
               );
             })}
@@ -137,39 +135,39 @@ export default function CheckRide() {
                 );
               })}
             </div>
-            <div className="cr-bottom-container">
-              <div className="cr-title">They are requesting to join your pool </div>
-              <div className="join-request-block">
-                <div className="joinee-pic-name">
-                  <div className="joinee-pic">
-                    <img className="joinee-pic">
+            {/* <div className="cr-bottom-container"> */}
+            <div className="cr-title">They are requesting to join your pool </div>
+            <div className="join-request-block">
+              <div className="joinee-pic-name">
+                <div className="joinee-pic">
+                  <img className="joinee-pic">
 
-                    </img>
-                  </div>
-                  <div className="joinee-name-id">
-                    John<br></br>
-                    SYT555
-                  </div>
+                  </img>
                 </div>
-                <div className="from-to-dropofflocations">
-                  <div className="from-and-to">
-                    From : <br></br><br></br>
-                    To :
-                  </div>
-                  <div className="seats-needed">
-                    Seats requested :
-                  </div>
-                </div>
-                <div className="accept-deny">
-                  <button className="accept">Accept</button>
-                  <button className="deny">Turn Down</button>
+                <div className="joinee-name-id">
+                  John<br></br>
+                  SYT555
                 </div>
               </div>
+              <div className="from-to-dropofflocations">
+                <div className="from-and-to">
+                  From : <br></br><br></br>
+                  To :
+                </div>
+                <div className="seats-needed">
+                  Seats requested :
+                </div>
+              </div>
+              <div className="accept-deny">
+                <button className="accept">Accept</button>
+                <button className="deny">Turn Down</button>
+              </div>
             </div>
+            {/* </div> */}
           </div>
         </div>
-        <Footer></Footer>
       </Layout>
+      <Footer></Footer>
     </>
   );
 }

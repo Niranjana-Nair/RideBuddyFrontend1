@@ -1,31 +1,25 @@
 .cr-title {
    text-align: center;
+
 }
 
-.cr-outer-box {
-   box-shadow: 0 4px 8px 0 rgba(17, 143, 122, 0.2);
-   background-color: rgb(201, 230, 225);
-   transition: 0.3s;
-   border-radius: 2vh;
-   margin: auto;
-   text-align: center;
-   margin-bottom: 5vh;
-   margin-top: 3vh;
+.cr-container {
    display: flex;
-   height: fit-content;
-   width: fit-content;
+   justify-content: space-evenly;
+   align-items: center;
+   border: none;
+
 }
 
 .cr-detail {
    display: flex;
    column-gap: 3vh;
    align-items: center;
+   justify-content: space-evenly;
+   background-color: rgb(201, 230, 225);
+   border-radius: 10px;
 }
 
-.cr-first {
-   text-align: center;
-   align-items: center;
-}
 
 .cr-row {
    border-radius: 1vh;
@@ -41,15 +35,24 @@
 
 .cr-btn {
    color: #fff;
-   width: 150px;
-   padding: 10px 15px;
-   margin: 35px auto;
+   width: 100px;
+   padding: 4px 4px;
+   /* margin: 35px auto; */
    font-weight: bold;
    background-image: linear-gradient(to right, #93c47d, #5cbfec);
    cursor: pointer;
    transition: opacity 0.4s;
-   margin-right: 16px;
+   /* margin-right: 16px; */
 
+}
+
+.check-buttons {
+   display: flex;
+   flex-direction: column;
+   row-gap: 5px;
+   justify-content: space-evenly;
+   align-items: center;
+   margin: 4px 14px;
 }
 
 .cr-btn:hover {
@@ -113,11 +116,12 @@
    background-color: rgb(201, 230, 225);
    transition: 0.3s;
    border-radius: 2vh;
-   margin: auto;
+   /* margin: auto; */
    text-align: center;
-   margin-bottom: 5vh;
-   margin-top: 3vh;
+   /* margin-bottom: 5vh; */
+   /* margin-top: 3vh; */
    display: flex;
+   justify-content: space-evenly;
    height: fit-content;
    width: fit-content;
 }
@@ -190,19 +194,28 @@
 
 .join-request-block {
    display: flex;
+   column-gap: 3vh;
+   align-items: center;
    justify-content: space-evenly;
-   width: 50vw;
-   height: 15vh;
-   background-color: cornflowerblue;
+   background-color: rgb(201, 230, 225);
    border-radius: 10px;
-   margin-top: 2vh;
-   flex-wrap: wrap;
+   margin: auto;
+   width: 50%;
+   justify-content: center;
+}
+
+
+
+.register-body {
+   align-items: center;
+   height: calc(120vh - 90px);
 }
 
 .accept-deny {
    display: flex;
    flex-direction: column;
    justify-content: space-evenly;
+   row-gap: 10px;
 }
 
 .from-to-dropofflocations {
@@ -220,4 +233,12 @@
 .joinee-name-id {
    font-size: medium;
    font-weight: 500;
+}
+
+@media screen and (max-width: 540px) {
+   .join-request-block {
+      width: 100%;
+      height: 100%;
+      justify-content: space-evenly;
+   }
 }
