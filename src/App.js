@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 
 import './App.css';
-import {Route,Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AdminDashboard from './pages/admin/Dashboard';
 import UserManage from './pages/admin/UserManage';
 import AdminLogin from './pages/admin/Login';
@@ -26,13 +26,16 @@ import CheckRide from './pages/user/CheckRide';
 import UserProfile from './pages/user/UserProfile';
 import StartRide from './pages/user/StartRide';
 import UserManagement2 from './pages/admin/UserManagement2';
+import UserTracking from './pages/user/UserTracking';
+import ContactUs from './pages/user/ContactUs';
+import AboutUs from './pages/user/AboutUs';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path='/admin-dashboard' element={<AdminDashboard></AdminDashboard>}></Route>
-        <Route path='/admin-users' element = {<UserManage></UserManage>}></Route>
+        <Route path='/admin-users' element={<UserManage></UserManage>}></Route>
         <Route path='/admin-login' element={<AdminLogin></AdminLogin>}></Route>
         <Route path='/host-ride' element={<HostRide></HostRide>}></Route>
         <Route path='/check-wheels' element={<Wheels></Wheels>}></Route>
@@ -42,21 +45,23 @@ function App() {
         <Route path='/change-password' element={<ChangePassword></ChangePassword>}></Route>
         <Route path='/add-users' element={<AddUser></AddUser>}></Route>
         <Route path='/user-login' element={<UserLogin></UserLogin>}></Route>
-        <Route path='/' element={<HomePage></HomePage>}></Route> 
+        <Route path='/' element={<HomePage></HomePage>}></Route>
         <Route path='/user-confirmation' element={<UserConfirmation></UserConfirmation>}></Route>
         <Route path='/home-page' element={<HomePage></HomePage>}></Route>
         <Route path='/add-wheels' element={<AddWheels></AddWheels>}></Route>
-        <Route path='/test-add-user' element={<TestAddUser></TestAddUser>}></Route>    
+        <Route path='/test-add-user' element={<TestAddUser></TestAddUser>}></Route>
         <Route path='/test-wheels' element={<TestWheels></TestWheels>}></Route>
         <Route path='/join-ride' element={<JoinRide></JoinRide>}></Route>
         <Route path='/found-pool' element={<FoundPool></FoundPool>}></Route>
         <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
         <Route path='/confirm-pool/:hostedRideId' element={<ConfirmPool></ConfirmPool>}></Route>
-        <Route path='/trip-hosted' element={<TripsHostedDetails></TripsHostedDetails>}></Route>  
-        <Route path='/check-ride/:id' element={<CheckRide></CheckRide>}></Route>  
-        <Route path='/start-ride' element={<StartRide></StartRide>}></Route>  
-        <Route path='/admin-user-directory' element={<UserManagement2></UserManagement2>}></Route>  
-
+        <Route path='/trip-hosted' element={<TripsHostedDetails></TripsHostedDetails>}></Route>
+        <Route path='/check-ride/:id' element={<CheckRide></CheckRide>}></Route>
+        <Route path='/start-ride' element={<StartRide></StartRide>}></Route>
+        <Route path='/admin-user-directory' element={<UserManagement2></UserManagement2>}></Route>
+        <Route path='/user-tracking' element={<UserTracking></UserTracking>}></Route>
+        <Route path='/contact-us' element={<ContactUs></ContactUs>}></Route>
+        <Route path='/about-us' element={<AboutUs></AboutUs>}></Route>
       </Routes>
     </div>
   );

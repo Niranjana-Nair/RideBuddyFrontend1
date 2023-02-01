@@ -1,0 +1,21 @@
+.about-us-container{
+    background-color: white;
+    min-height: 100vh;
+    padding: 2px 16px;
+}
+
+.about-us-Image{
+    width: 100vw;
+    height: 50vh;  
+    margin-top: 7vh; 
+    object-fit: cover;
+}
+.our-story{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.rb-Story{
+   font-size: large;
+}
